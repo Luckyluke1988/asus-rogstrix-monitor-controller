@@ -8,11 +8,6 @@ print("Detected monitors:", monitors)
 
 MONITOR = monitors[0]
 
-print(f"Controlling: {MONITOR}")
-print("Alt + ↑ = brighter")
-print("Alt + ↓ = darker")
-print("ESC = quit")
-
 alt_pressed = False
 
 
@@ -38,9 +33,6 @@ def on_press(key):
 
         elif alt_pressed and key == keyboard.Key.down:
             set_brightness(get_brightness() - STEP)
-
-        elif key == keyboard.Key.esc:
-            return False
 
     except Exception as e:
         print(f"Error: {e}")
